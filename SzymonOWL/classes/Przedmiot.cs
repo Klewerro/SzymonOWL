@@ -10,17 +10,28 @@ namespace SzymonOWL.classes
     {
         public string nazwa { get; set; }
         public string semestr { get; set; }
-        public int rok { get; set; }
-        public string wykladana_przez { get; set; }
-        public List<string> studiowana_przez { get; set; }
+        public string rok { get; set; }
+        public string wydzial { get; set; }
+        public string przedmiot_id { get; set; }
 
-        public Przedmiot(string nazwa, string semestr, int rok, string wykladana_przez, List<string> studiowana_przez)
+        public List<string> studiowana_przez { get; set; }
+        public string uczona_przez {get; set;}
+
+        public Przedmiot(string przedmiot_id)
+        {
+            this.przedmiot_id = przedmiot_id;
+        }
+
+        public Przedmiot(string nazwa, string semestr, string rok, string wydzial, string uczona_przez, List<string> studiowana_przez)
         {
             this.nazwa = nazwa;
             this.semestr = semestr;
             this.rok = rok;
-            this.wykladana_przez = wykladana_przez;
+            this.wydzial = wydzial;
+            this.uczona_przez = uczona_przez;
             this.studiowana_przez = studiowana_przez;
         }
+
+       
     }
 }

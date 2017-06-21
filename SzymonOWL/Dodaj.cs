@@ -7,17 +7,18 @@ using System.Xml.Linq;
 
 namespace SzymonOWL
 {
-    class Parser
+    class Dodaj
     {
-        int licznikStudent = 0;
-        int licznikWykladowca = 0;
-        int licznikPrzedmiot = 0;
+        Pobierz p = new Pobierz();
+        private int licznikStudent = 0;
+        private int licznikWykladowca = 0;
+        private int licznikPrzedmiot = 0;
 
-
-        public void dodajStudenta(int id, string imie, string nazwisko, string rodzaj, string wydzial)
+        public void studenta(string imie, string nazwisko, string rodzaj, string wydzial)
         {
             liczniki();
             liczniki("student");
+            liczniki();
             XDocument xml = XDocument.Load("Test.owl");
 
             //powiazanie z klasa
@@ -25,41 +26,48 @@ namespace SzymonOWL
                 new XComment("Dodanie nowego studenta"),
                 new XElement("ClassAssertion",
                 new XElement("Class", new XAttribute("IRI", "#" + rodzaj)),
-                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + id))
+                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + licznikStudent))
                 ),
                 //student_id
-                new XElement("DataPropertyAssertion",
-                new XElement("DataProperty", new XAttribute("IRI", "#student_id")),
-                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + id)),
-                new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), id)
-                ),
+                //new XElement("DataPropertyAssertion",
+                //new XElement("DataProperty", new XAttribute("IRI", "#student_id")),
+                //new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + licznikStudent)),
+                //new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), licznikStudent)
+                //),
                 //imie
                 new XElement("DataPropertyAssertion",
                 new XElement("DataProperty", new XAttribute("IRI", "#imie")),
-                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + id)),
+                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + licznikStudent)),
                 new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), imie)
                 ),
                 //nazwisko
                 new XElement("DataPropertyAssertion",
                 new XElement("DataProperty", new XAttribute("IRI", "#nazwisko")),
-                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + id)),
+                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + licznikStudent)),
                 new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), nazwisko)
                 ), 
                 //wydzial 
                 new XElement("DataPropertyAssertion",
                 new XElement("DataProperty", new XAttribute("IRI", "#wydział")),
-                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + id)),
+                new XElement("NamedIndividual", new XAttribute("IRI", "#Student_" + licznikStudent)),
                 new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), wydzial)
                 )
             );
+            //if (rodzaj.Equals("Stacjonarny"))
+            //    p.studenciStacjonarni.Add(new classes.Student("Student_" + licznikStudent, imie, nazwisko, wydzial));
+            //if (rodzaj.Equals("Niestacjonarny"))
+            //    p.studenciNiestacjonarni.Add(new classes.Student("Student_" + licznikStudent, imie, nazwisko, wydzial));
+            //if (rodzaj.Equals("ITS"))
+            //    p.studenciITS.Add(new classes.Student("Student_" + licznikStudent, imie, nazwisko, wydzial));
             xml.Save("Test.owl");
             pirate("Test.owl");
         }
 
-        public void dodajWykladowce(int id, string imie, string nazwisko, string st_naukowy, string wydzial)
+        public void wykladowce(string imie, string nazwisko, string st_naukowy, string wydzial)
         {
             liczniki();
             liczniki("wykladowca");
+            liczniki();
             XDocument xml = XDocument.Load("Test.owl");
 
             //powiazanie z klasa
@@ -67,36 +75,36 @@ namespace SzymonOWL
                 new XComment("Dodanie nowego wykladowcy"),
                     new XElement("ClassAssertion",
                     new XElement("Class", new XAttribute("IRI", "#Wykładowca")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca))
                 ),
                 //wykladowca_id
-                new XElement("DataPropertyAssertion",
-                    new XElement("DataProperty", new XAttribute("IRI", "#wykładowca_id")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id)),
-                    new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), id)
-                ),
+                //new XElement("DataPropertyAssertion",
+                //    new XElement("DataProperty", new XAttribute("IRI", "#wykładowca_id")),
+                //    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca)),
+                //    new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), licznikWykladowca)
+                //),
                 //imie
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#imie")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), imie)
                 ),
                 //nazwisko
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#nazwisko")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), nazwisko)
                 ),
                 //wydzial 
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#wydział")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), wydzial)
                 ),
                 //st. naukowy
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#st_naukowy")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#Wykładowca_" + licznikWykladowca)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#string"), st_naukowy)
                 )
             );
@@ -104,22 +112,23 @@ namespace SzymonOWL
             pirate("Test.owl");
         }
 
-        public void dodajPrzedmiot(int id, string nazwa, string wydzial, int rok, string semestr, string rodzaj_zajec)
+        public void przedmiot(string nazwa, string wydzial, string rok, string semestr, string rodzaj_zajec)
         {
             liczniki();
             liczniki("przedmiot");
-            XDocument xml = XDocument.Load("moja_ontologia.owl");
+            liczniki();
+            XDocument xml = XDocument.Load("Test.owl");
 
             //powiazanie z klasa
             xml.Root.Add(
                 new XComment("Dodanie nowego przedmiotu"),
                 new XElement("Declaration",
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + nazwa + "_" + id))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj_zajec + "_" + licznikPrzedmiot))
                 ),
 
                 new XElement("ClassAssertion",
                     new XElement("Class", new XAttribute("IRI", "#" + rodzaj_zajec)),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + nazwa +"_" + id))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj_zajec+"_" + licznikPrzedmiot))
                 ),
 
                 //new XElement("ClassAssertion",
@@ -130,25 +139,25 @@ namespace SzymonOWL
                 //nazwa
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#przedmiot_nazwa")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + nazwa + "_" + id)),
-                    new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), nazwa.Replace("_", " "))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj_zajec + "_" + licznikPrzedmiot)),
+                    new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), nazwa)
                 ),
                 //rok
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#przedmiot_rok")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#"+nazwa+"_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#"+ rodzaj_zajec + "_" + licznikPrzedmiot)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), rok)
                 ),
                 //semestr
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#przedmiot_semestr")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + nazwa + "_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj_zajec + "_" + licznikPrzedmiot)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), semestr)
                 ),
                 //wydzial
                 new XElement("DataPropertyAssertion",
                     new XElement("DataProperty", new XAttribute("IRI", "#wydział")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + nazwa + "_" + id)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj_zajec + "_" + licznikPrzedmiot)),
                     new XElement("Literal", new XAttribute("datatypeIRI", "http://www.w3.org/2001/XMLSchema#integer"), wydzial)
                 )
 
@@ -156,32 +165,60 @@ namespace SzymonOWL
             xml.Save("Test.owl");
             pirate("Test.owl");
         }
-
-        public void dodajStudentaDoPrzedmiotu(string student, string przedmiot)
+        //nizej - do poprawy
+        public void dodajStudentaDoPrzedmiotu(string student, string przedmiot, string rodzaj)
         {
             XDocument xml = XDocument.Load("Test.owl");
 
             //powiazanie z klasa
             xml.Root.Add(
-                new XComment("Dodanie studenta "+ student + "do przedmiotu " + przedmiot),
+                new XComment("Dodanie studenta " + student + "do przedmiotu " + przedmiot),
                 //studiowana przez
-                new XElement("ObjectPropertyAssertion", 
+                new XElement("ObjectPropertyAssertion",
                     new XElement("ObjectProperty", new XAttribute("IRI", "#studiowana_przez")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", przedmiot)),
-                    new XElement("NamedIndividual", new XAttribute("IRI", student))
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj + "_" + licznikPrzedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + student))
                 ),
                 //studiuje
                 new XElement("ObjectPropertyAssertion",
                     new XElement("ObjectProperty", new XAttribute("IRI", "#studiuje")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", student)),
-                    new XElement("NamedIndividual", new XAttribute("IRI", przedmiot))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + student)),
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj + "_" + licznikPrzedmiot))
                 )  
             );
             xml.Save("Test.owl");
             pirate("Test.owl");
         }
 
-        public void dodajWykladowceDoPrzedmiotu(string wykladowca, string przedmiot)
+        public void dodajStudentaDoPrzedmiotu2(string student, string przedmiot)
+        {
+            XDocument xml = XDocument.Load("Test.owl");
+
+            //powiazanie z klasa
+            xml.Root.Add(
+                new XComment("Dodanie studenta " + student + "do przedmiotu " + przedmiot),
+                //studiowana przez
+                new XElement("ObjectPropertyAssertion",
+                    new XElement("ObjectProperty", new XAttribute("IRI", "#studiowana_przez")),
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + student))
+                ),
+                //studiuje
+                new XElement("ObjectPropertyAssertion",
+                    new XElement("ObjectProperty", new XAttribute("IRI", "#studiuje")),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + student)),
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot))
+                )
+            );
+            xml.Save("Test.owl");
+            pirate("Test.owl");
+        }
+
+        public void dodajWykladowceDoPrzedmiotu(string wykladowca, string przedmiot, string rodzaj)
         {
             XDocument xml = XDocument.Load("Test.owl");
 
@@ -191,14 +228,16 @@ namespace SzymonOWL
                 //uczona przez
                 new XElement("ObjectPropertyAssertion",
                     new XElement("ObjectProperty", new XAttribute("IRI", "#uczona_przez")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", przedmiot)),
-                    new XElement("NamedIndividual", new XAttribute("IRI", wykladowca))
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj + "_" + licznikPrzedmiot)),
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + wykladowca))
                 ),
                 //uczy
                 new XElement("ObjectPropertyAssertion",
                     new XElement("ObjectProperty", new XAttribute("IRI", "#uczy")),
-                    new XElement("NamedIndividual", new XAttribute("IRI", wykladowca)),
-                    new XElement("NamedIndividual", new XAttribute("IRI", przedmiot))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + wykladowca)),
+                    //new XElement("NamedIndividual", new XAttribute("IRI", "#" + przedmiot))
+                    new XElement("NamedIndividual", new XAttribute("IRI", "#" + rodzaj + "_" + licznikPrzedmiot))
                 )
             );
             xml.Save("Test.owl");
@@ -246,7 +285,21 @@ namespace SzymonOWL
             xml.Save("liczniki.xml");
         }
 
-        public void licznikiSet(int studenci, int wykladowcy, int przedmioty)
+        public void licznikiDekrementacja(string nazwa)
+        {
+            XDocument xml = XDocument.Load("liczniki.xml");
+
+            if (nazwa.Equals("student"))
+                xml.Element("liczniki").Element("student").SetValue(licznikStudent - 1);
+            if (nazwa.Equals("wykladowca"))
+                xml.Element("liczniki").Element("wykladowca").SetValue(licznikWykladowca - 1);
+            if (nazwa.Equals("przedmiot"))
+                xml.Element("liczniki").Element("przedmiot").SetValue(licznikPrzedmiot - 1);
+
+            xml.Save("liczniki.xml");
+        }
+
+        public void licznikiSet(int studenci, int wykladowcy, int przedmioty)   //podajemy tyle ile mamy objectow danego typu, by ustawic poprawna inkrementacje
         {
             XDocument xml = XDocument.Load("liczniki.xml");
 

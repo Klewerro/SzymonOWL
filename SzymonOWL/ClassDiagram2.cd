@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SzymonOWL.classes.Przedmiot">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAKAAAAAAAAAQECAAAAIAA=</HashCode>
+      <FileName>classes\Przedmiot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.classes.Student" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>classes\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.classes.Wykladowca">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAKACAAAA=</HashCode>
+      <FileName>classes\Wykladowca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Dodaj">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAQAAkAAAAAAIEAAgAAAAAAAAIAAEAABAAAAAA=</HashCode>
+      <FileName>Dodaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Form2">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>8SGAQKJRgOEQSTAYDKyqIAD+A1KPERJiMWDAaAaDHAA=</HashCode>
+      <FileName>Form2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Pobierz">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAACAAAAAEAIgAAAAAAAAAABQAAABAAAEAIAgg=</HashCode>
+      <FileName>Pobierz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Program" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Properties.Resources">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

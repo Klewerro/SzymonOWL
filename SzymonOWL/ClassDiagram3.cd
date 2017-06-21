@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SzymonOWL.classes.Przedmiot">
+    <Position X="10.75" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAKAAAAAAAAAQECAAAAIAA=</HashCode>
+      <FileName>classes\Przedmiot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.classes.Student">
+    <Position X="10.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAIAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>classes\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.classes.Wykladowca">
+    <Position X="10.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAKACAAAA=</HashCode>
+      <FileName>classes\Wykladowca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Dodaj">
+    <Position X="6.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAQAAkAAAAAAIEAAgAAAAAAAAIgAEAABAAAAAA=</HashCode>
+      <FileName>Dodaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Form2">
+    <Position X="2.25" Y="1.25" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>/yHAQqJRjOERSTAZHK/oYFD+Q9KPVTJ6OWDIaAeDHDA=</HashCode>
+      <FileName>Form2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Pobierz">
+    <Position X="6" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAACAAAAAEAIgAAAQAAAAAABQAAABAAAEAIAgg=</HashCode>
+      <FileName>Pobierz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SzymonOWL.Program">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
